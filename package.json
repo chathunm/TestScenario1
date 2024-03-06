@@ -1,0 +1,23 @@
+{
+  "name": "web-automation",
+  "version": "1.0.0",
+  "description": "Deriv Skill Test - Scenario 1:  Web Automation",
+  "main": "index.js",
+  "scripts": {
+    "test": "cross-env mocha test/resources/test_playlist.js --reporter mochawesome --recursive --timeout 70000 --exit"
+  },
+  "dependencies": {
+    "chai": "^3.5.0",
+    "colors": "^1.4.0",
+    "cross-env": "^7.0.2",
+    "mocha": "^8.4.0",
+    "properties-reader": "^2.3.0",
+    "selenium-webdriver": "^4.18.1"
+  },
+  "author": "Chathuranga Mihindukulasooriya",
+  "license": "ISC",
+  "devDependencies": {
+    "chromedriver": "^121.0.0",
+    "mochawesome": "^6.3.1"
+  }
+}

@@ -1,0 +1,7 @@
+module.exports = {
+    MILLI_SEC_100_WAIT: 100,
+    DEFAULT_WAIT: 500,
+    TWO_SEC_WAIT: 2000,
+    FIVE_SEC_WAIT: 5000,
+    TEN_SEC_WAIT: 10000
+}

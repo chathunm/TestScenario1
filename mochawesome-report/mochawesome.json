@@ -1,0 +1,253 @@
+{
+  "stats": {
+    "suites": 3,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-03-05T16:03:32.983Z",
+    "end": "2024-03-05T16:04:14.032Z",
+    "duration": 41049,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "88cbb426-25c1-4882-8a64-8382090b51f2",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [
+        {
+          "title": "\"before each\" hook: Navigate to Orange HRM Login Page in \"{root}\"",
+          "fullTitle": "\"before each\" hook: Navigate to Orange HRM Login Page in \"{root}\"",
+          "timedOut": false,
+          "duration": 642,
+          "state": null,
+          "speed": null,
+          "pass": false,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "const util = new HrmUtil()\nawait hrmBasePage.navigateToOrangeHrmLoginPage()\n// await util.waitUntilElementVisibleByXPath(username_xpath)\n// await util.waitUntilElementVisibleByXPath(password_xpath)\n// await hrmLoginPage.hrmLoginSuccessWithDefaults()\n// await util.waitUntilElementVisibleByXPath('//*[contains(@class,\"oxd-topbar-header-breadcrumb-module\")][text()=\"Dashboard\"]')\n// return new HrmDashboardPage()",
+          "err": {},
+          "uuid": "414c7ded-1d66-4131-af8e-7010bd9fb5b2",
+          "parentUUID": "88cbb426-25c1-4882-8a64-8382090b51f2",
+          "isHook": true,
+          "skipped": false
+        }
+      ],
+      "afterHooks": [
+        {
+          "title": "\"after all\" hook in \"{root}\"",
+          "fullTitle": "\"after all\" hook in \"{root}\"",
+          "timedOut": false,
+          "duration": 2,
+          "state": null,
+          "speed": null,
+          "pass": false,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "const driverBase = new HrmDriverBase()\nconst driver = await driverBase.getDriver(browser)\nif (driver != null) {\n    driver.quit()\n}\nconsole.log('--- Tear Down Activity ------- : Browser Session Terminated ----------')",
+          "err": {},
+          "uuid": "d8dcd71f-6ba1-45af-9f95-f3815ec102ba",
+          "parentUUID": "88cbb426-25c1-4882-8a64-8382090b51f2",
+          "isHook": true,
+          "skipped": false
+        },
+        {
+          "title": "\"after each\" hook: Logout from the Orange HRM Dashboard Page in \"{root}\"",
+          "fullTitle": "\"after each\" hook: Logout from the Orange HRM Dashboard Page in \"{root}\"",
+          "timedOut": false,
+          "duration": 5112,
+          "state": null,
+          "speed": null,
+          "pass": false,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "try {\n    await hrmDashboardPage.selectUserDropDownMenuItem('Logout')\n} catch (NoSuchElementError) {\n    console.log('User already Logged out from the application')\n}",
+          "err": {},
+          "uuid": "d9b99030-73db-4a3a-a0a1-f2f2ee2978da",
+          "parentUUID": "88cbb426-25c1-4882-8a64-8382090b51f2",
+          "isHook": true,
+          "skipped": false
+        }
+      ],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7e058c68-bec9-4faa-b9ba-0b8762da158d",
+          "title": "Test Objective : Validate Orange HRM Login Scenario",
+          "fullFile": "D:\\Q4US\\Deriv\\Test_Scenario1\\test\\resources\\test_playlist.js",
+          "file": "\\test\\resources\\test_playlist.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should verify the orange hrm dashboard page content once user logged in with valid credentials | TC_ORG_HRM_LOGIN_01",
+              "fullTitle": "Test Objective : Validate Orange HRM Login Scenario should verify the orange hrm dashboard page content once user logged in with valid credentials | TC_ORG_HRM_LOGIN_01",
+              "timedOut": false,
+              "duration": 3543,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "/* \nPrecondition : \n- User Credentilas\n    - Username: Admin\n    - Password: admin123\n- Initiate Chrome Browser Session \n- Navigate to https://opensource-demo.orangehrmlive.com/\n\nInput 01 :\n- Fill the login form with given credentials\n- Click on Login button\nExpected Outcome 01 :\n- User logged into the application sucessfully\n- User navigates to the Dashboard Screen and displays admin panel as default view\n*/\nutil.printStatementWithFormat('------------------------ || TC_ORG_HRM_LOGIN_01 || ----------------------------')\nutil.printStatementWithFormat('--- Input 01 -------- : User Login with specifying valid Credentials ----------')\nawait hrmLoginPage.hrmLoginSuccessWithDefaults()\nutil.printStatementWithFormat('--- Expected Outcome 01 ---------- : Validate Cloud Suite Dashboard Page Data -')\nexpect(await hrmDashboardPage.getPageTopBarHeader()).to.equal('Dashboard')",
+              "err": {},
+              "uuid": "e58cff1d-a538-434e-97f1-f917f58edc22",
+              "parentUUID": "7e058c68-bec9-4faa-b9ba-0b8762da158d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should verify the login page functionality when user trying to logged in with invalid credentials | TC_ORG_HRM_LOGIN_02",
+              "fullTitle": "Test Objective : Validate Orange HRM Login Scenario should verify the login page functionality when user trying to logged in with invalid credentials | TC_ORG_HRM_LOGIN_02",
+              "timedOut": false,
+              "duration": 2927,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "/* \nPrecondition : \n- User Credentilas\n    - Username: Admin\n    - Password: admin@123\n- Initiate Chrome Browser Session \n- Navigate to https://opensource-demo.orangehrmlive.com/\n\nInput 01 :\n- Fill the login form with given credentials\n- Click on Login button\nExpected Outcome 01 :\n- User login action does not get success : 'Invalid credentials'\n*/\nutil.printStatementWithFormat('------------------------ || TC_ORG_HRM_LOGIN_02 || ----------------------------')\nutil.printStatementWithFormat('--- Input 01 -------- : User Login with specifying valid Credentials ----------')\nconst notification = await hrmLoginPage.hrmLoginWithOverrides(username, password, false)\nutil.printStatementWithFormat('--- Expected Outcome 01 ---------- : Validate Loggin Error Notification -------')\nexpect(notification).to.equal('Invalid credentials')",
+              "err": {},
+              "uuid": "01251d6e-b40e-4f32-a4a8-82d6ba78305a",
+              "parentUUID": "7e058c68-bec9-4faa-b9ba-0b8762da158d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e58cff1d-a538-434e-97f1-f917f58edc22",
+            "01251d6e-b40e-4f32-a4a8-82d6ba78305a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6470,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 70000
+        },
+        {
+          "uuid": "500ff30a-1e4d-4acb-9a59-32fef9dd851e",
+          "title": "Test Objective : Validate My Info Page Details",
+          "fullFile": "D:\\Q4US\\Deriv\\Test_Scenario1\\test\\resources\\test_playlist.js",
+          "file": "\\test\\resources\\test_playlist.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should verify the My Info page details after updating \"Date of Birth\" field | TC_ORG_HRM_INFO_01",
+              "fullTitle": "Test Objective : Validate My Info Page Details should verify the My Info page details after updating \"Date of Birth\" field | TC_ORG_HRM_INFO_01",
+              "timedOut": false,
+              "duration": 7285,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "/* \nInput 01 :\n- Navigate to https://opensource-demo.orangehrmlive.com/ with valid Credentials\nExpected Outcome 01 :\n- User logged into the application sucessfully\n\nInput 02 :\n- Navigate to \"My Info\" Page\nExpected Outcome 02 :\n- Verify Data in the \"My Info\" Page\n        \nInput 03 :\n- Update \"Date of Birth\" text field\nExpected Outcome 03 :\n- Verify \"Date of Birth\" text field value\n*/\nutil.printStatementWithFormat('------------------------ || TC_ORG_HRM_INFO_01 || -----------------------------')\nutil.printStatementWithFormat('--- Input 01 -------- : User Login with specifying valid Credentials ----------')\nawait hrmLoginPage.hrmLoginSuccessWithDefaults()\nutil.printStatementWithFormat('--- Expected Outcome 01 ---------- : Validate Cloud Suite Dashboard Page Data -')\nexpect(await hrmDashboardPage.getPageTopBarHeader()).to.equal('Dashboard')\nutil.printStatementWithFormat('--- Input 02 -------- : User Navigates to \"My Info\" Menu Item -----------------')\nhrmMyInfoPage = await hrmDashboardPage.navigateToMenuItem('My Info')\nutil.printStatementWithFormat('--- Expected Outcome 02 ---------- : Validate \"My Info\" Page Data -------------')\nexpect(await hrmMyInfoPage.getMyInfoPageDetails()).to.equal('PIM')\nexpect(await hrmMyInfoPage.isFiledNameExist('Employee Id')).to.equal(true)\nexpect(await hrmMyInfoPage.isFiledNameExist('Employee Full Name')).to.equal(true)\nexpect(await hrmMyInfoPage.isFiledNameExist('Nationality')).to.equal(true)\nexpect(await hrmMyInfoPage.isFiledNameExist('Date of Birth')).to.equal(true)\nutil.printStatementWithFormat('--- Input 03 -------- : User Edit Date of Birth -------------------------------')\nawait hrmMyInfoPage.addDateInfoToFormPage('Date of Birth', '1985-10-07')\nconst notification = await hrmMyInfoPage.saveChangesBySectionName('Personal Details')\nawait util.waitUntilLoadComplete()\nutil.printStatementWithFormat('--- Expected Outcome 03 ---------- : Validate \"My Info\" Page Data -------------')\nexpect(notification).to.equal('Successfully Updated')\nexpect(await hrmMyInfoPage.isFiledNameExist('Date of Birth')).to.equal(true)\nexpect(await hrmMyInfoPage.getFieldDataByFieldName('Date of Birth')).to.equal('1985-10-07')",
+              "err": {},
+              "uuid": "62326c9d-a609-4b15-beb7-0a91267afb68",
+              "parentUUID": "500ff30a-1e4d-4acb-9a59-32fef9dd851e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "62326c9d-a609-4b15-beb7-0a91267afb68"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 7285,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 70000
+        },
+        {
+          "uuid": "7f76a8af-aa33-459d-8e71-a98ea57d7fc2",
+          "title": "Test Objective : Validate Logout Functionality from the Orange HRM portal",
+          "fullFile": "D:\\Q4US\\Deriv\\Test_Scenario1\\test\\resources\\test_playlist.js",
+          "file": "\\test\\resources\\test_playlist.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should verify logout functionality when user perform \"Logout\" action from profile dropdown menu | TC_ORG_HRM_LOGOUT_01",
+              "fullTitle": "Test Objective : Validate Logout Functionality from the Orange HRM portal should verify logout functionality when user perform \"Logout\" action from profile dropdown menu | TC_ORG_HRM_LOGOUT_01",
+              "timedOut": false,
+              "duration": 5638,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "/* \nInput 01 :\n- Navigate to https://opensource-demo.orangehrmlive.com/ with valid Credentials\nExpected Outcome 01 :\n- User logged into the application sucessfully\n\nInput 02 :\n- User selects \"Logout\" option from the Profile drop down menu\nExpected Outcome 02 :\n- User successfully Logout from the application\n*/\nutil.printStatementWithFormat('------------------------ || TC_ORG_HRM_LOGOUT_01 || ---------------------------')\nutil.printStatementWithFormat('--- Input 01 -------- : User Login with specifying valid Credentials ----------')\nawait hrmLoginPage.hrmLoginSuccessWithDefaults()\nutil.printStatementWithFormat('--- Expected Outcome 01 ---------- : Validate Cloud Suite Dashboard Page Data -')\nexpect(await hrmDashboardPage.getPageTopBarHeader()).to.equal('Dashboard')\nutil.printStatementWithFormat('--- Input 02 -------- : User Selects \"Logout\" option from User Dropdown Menu --')\nawait hrmDashboardPage.selectUserDropDownMenuItem('Logout')\nhrmLoginPage = new HrmLoginPage()\nutil.printStatementWithFormat('--- Expected Outcome 02 ---------- : Validate Logout action response ----------')\nexpect(await hrmLoginPage.getPageHeader()).to.equal('Login')",
+              "err": {},
+              "uuid": "47311aea-3ffd-4483-a637-7b543ec71328",
+              "parentUUID": "7f76a8af-aa33-459d-8e71-a98ea57d7fc2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "47311aea-3ffd-4483-a637-7b543ec71328"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5638,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 70000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 70000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "8.4.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.3.1"
+    },
+    "marge": {
+      "options": null,
+      "version": "5.2.0"
+    }
+  }
+}
